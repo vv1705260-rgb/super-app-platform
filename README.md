@@ -21,7 +21,7 @@
 
 **NexusStore** is a standalone e-commerce website designed for modern retail. This project delivers premium UI/UX, real-world shopping functionality, and bold visual design using only frontend technologies.
 
-**Project Type:** BCA Final Year Project / Portfolio Showcase  
+**Project Type:** Intership Project / Portfolio Showcase  
 **Development Time:** 8-10 hours  
 **Hosting:** 100% Free via GitHub Pages
 
@@ -84,6 +84,7 @@
 
 ---
 
+Made by - **Vaishali💗🌸**
 ## 🚀 Quick Start
 
 ### **1. Run Locally**
@@ -92,4 +93,4 @@ git clone https://github.com/yourusername/nexus-store.git
 cd nexus-store
 # Open index.html in your browser
 
-Made by - * Vaishali🌸💗 * 
+Made by love💗
