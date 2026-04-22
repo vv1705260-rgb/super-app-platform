@@ -1,0 +1,239 @@
+/* ===== NEW STRONG FEATURES ===== */
+
+/* 1. Animated Gradient Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(99,102,241,0.03), rgba(139,92,246,0.03), rgba(236,72,153,0.03));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. Skeleton Loaders */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 3. Product Quick Actions */
+.product-card { position: relative; }
+.quick-actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.product-card:hover.quick-actions {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.quick-action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: var(--transition);
+}
+
+.quick-action-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* 4. Price Drop Animation */
+@keyframes priceDrop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); color: var(--danger); }
+}
+
+.price-drop { animation: priceDrop 0.6s ease; }
+
+/* 5. Recently Viewed Bar */
+.recently-viewed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--surface);
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+  max-width: 300px;
+  overflow-x: auto;
+}
+
+.recently-viewed img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.recently-viewed img:hover { transform: scale(1.1); }
+
+/* 6. Live Chat Widget Button */
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #8B5CF6);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px var(--primary-glow);
+  z-index: 50;
+  animation: chatPulse 2s infinite;
+}
+
+@keyframes chatPulse {
+  0%, 100% { box-shadow: 0 8px 24px var(--primary-glow); }
+  50% { box-shadow: 0 8px 40px var(--primary-glow); }
+}
+
+.chat-widget span { color: white; font-size: 28px; }
+
+/* 7. Advanced Filter Pills */
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 24px;
+}
+
+.filter-pill {
+  padding: 8px 16px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-pill.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.filter-pill:hover { border-color: var(--primary); }
+
+/* 8. Confetti Animation for Purchase */
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  animation: confetti 3s ease-out forwards;
+}
+
+/* 9. Product Compare Checkbox */
+.compare-check {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* 10. Stock Progress Bar */
+.stock-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.stock-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--danger), var(--warning), var(--success));
+  transition: width 0.3s ease;
+}
+
+/* 11. Voice Search Indicator */
+.voice-active {
+  animation: voicePulse 1s infinite;
+}
+
+@keyframes voicePulse {
+  0%, 100% { background: var(--bg); }
+  50% { background: var(--danger); }
+}
+
+/* 12. Mega Menu Dropdown */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  padding: 32px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+}
+
+.mega-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+    }
